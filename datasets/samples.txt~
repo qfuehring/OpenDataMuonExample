@@ -1,0 +1,615 @@
+Samples from CMS primary datasets 2010:
+---------------------------------------                           av.# of vert.    NMB  glMu  gl2Mu
+              val                                                                             +-  ++/--
+ZeroBias:      -  17192479 events  128 files 366.0 GB in total    *do not use*
+
+MinimumBias:   *  40785403 events 1564 files   2.0 TB in total    1.2   -> 50M     16M  0.12M 1.4k 0.8k
+
+Jet:              20022826 events 1664 files   2.0 TB in total          -> 25M
+
+MultiJet:      *  21955999 events 2142 files   2.6 TB in total          -> 25M
+
+JetMETTauMonitor: 10178530 events  668 files   1.1 TB in total          -> 10M
+
+Mu:            *  32376291 events 2979 files   3.2 TB in total    2.5-1 -> 50M     26M  23.7M 3.1M 1.2M
+
+MuMonitor:     *  12728741 events  325 files   1.1 TB in total    2.4-1 -> 20M      9M   6.0M .12M .08M
+
+Electron:         32772061 events 3211 files   3.4 TB in total          -> 40M
+
+Photon:           25465895 events 2814 files   2.6 TB in total          -> 30M 
+
+EGMonitor:        11826859 events  780 files   1.1 TB in total  
+
+MuOnia:           26685576 events 2917 files   2.6 TB in total    2.5-1 -> 40M    (18M) 18.6M 2.5M 0.7M
+
+BTau:             25423849 events 2916 files   2.7 TB in total          -> 30M
+
+METFwd:           21127729 events 1829 files   1.7 TB in total          -> 25M
+
+Commissioning: *  11907244 events  581 files 881.3 GB in total          -> 10M      1M  0.46M 1.5k 1.1k
+
+= total of about 27 TB. O(300 million (310.4 M)) events including overlaps, excluding JSON
+  (1/2 year, .5x10^7 seconds -> effective average rate ~60 Hz) 
+
+=> O(300 000 000) next-to-minimum bias events (3 x 10^8) ~ 5 nb-1
+actually rather O(150M) useful NMB with JSON after removing overlaps. ~ 2.5 nb-1 
+
+ALICE finds few thousand D mesons in 5 nb-1
+=> should be feasable!
+
+Current/future trigger rate is about 1 kHz. 10^3 1/s * 10^7 s * 10/100 (pileup) 
+~ 10^11/10^12 next-to-minimum bias events/year ~2/20 pb-1/year
+-> 2010 data are good training sample
+
+for comparison:
+2010 luminosity: ~40 pb-1 (fraction of run B?)
+  minimum bias papers: 1.1 mub-1, 2.8 mub-1
+  total minimum bias sample: ~0.25 nb-1 (effective prescale 1.6x10^5)
+  NMB: ~3 nb-1 (effective prescale: 1.3x10^4) 
+  J/psi paper: 0.3 pb-1
+  W/Z papers: 2.9 pb-1, 36 pb-1
+  Mu paper: 40 pb-1
+2011 luminosity: ~5 fb-1 (open data: ~2.5 fb-1)
+  J/psi paper: 930 pb-1
+  trigger paper (mu): 1.1 fb-1/0.2 fb-1
+
+Collision rate (25 ns) is about 40 MHz, thus 1 kHz rate corresponds to prescale of ~4x10^4 * (pileup-1)
+Collision rate 50 ns is about 20 MHz, thus 200 Hz rate corresponds to prescale of ~1x10^5 * (pileup-1)
+
+ZeroBias dataset does not seem to contain track collections.
+
+Electron and Commissioning data sets are only indirectly documented on the 
+open data portal.
+
+running time (on windows destop from DESY network):  ~ 1h/1M events  ~10h/TB
+
+Running other processes (e.g. browser, scp) on the virtual machine while a 
+"long" job is running can kill the job (probably a memory management issue). 
+The symptom is the message:
+  killed
+If this happens, to be safe, close all other programs and windows in the 
+virtual box while running long jobs (and/or restart your virtual box
+before running the job).
+
+Beware of putting your JSON-related commands in the right place and order 
+in the py file!
+
+
+details:                                                                         usef. NMB   mult   sig  vtx glMu gl2Mu
+--------                                                                         ---------                        +-  ++/--
+MinBias00:   16235146 events                                                     11.649 M   19.03 16.48  1.2 .10M 1.2k 0.7k
+MinBias01:     700267 events                                                      0.537 M   19.43 16.73  1.8 .00M 0.0k 0.0k
+MinBias02:    1255839 events                                                      0.806 M   19.47 16.66  2.1 .00M 0.0k 0.0k
+MinBias03:      43825 events                                                      0.013 M   18.79 16.45  1.1 .00M 0.0k 0.0k
+MinBias04:    5334352 events                                                      1.519 M   18.79 16.31  1.3 .02M 0.2k 0.1k
+MinBias05:    1019647 events                                                      0.236 M   18.88 16.36  1.1 .00M 0.0k 0.0k
+MinBias06:     573828 events                                                      0.538 M   19.37 16.57  2.2 .00M 0.0k 0.0k
+MinBiasAll:  25162904 events  out of 40785403 (62%??)                            15.835 M                    .12M 1.4k 0.8k
+
+Mu00JSON:     6376189 events (23.8%)                                              5.816 M   18.75 16.37  2.3 5.5M 616k 241k
+Mu01JSON:     3938503 events                                                      3.570 M   18.76 16.37  2.4 3.3M 350k 137k
+Mu02JSON:     4057306 events                                                      4.097 M   18.52 16.11  2.7 3.8M 630k 247k
+Mu03JSON:     5813517 events                                                      6.053 M   18.57 16.16  2.7 5.3M 801k 315k
+Mu04JSON:     3542848 events                                                      3.420 M   18.63 16.24  2.5 3.1M 381k 152k
+Mu05JSON:     2989680 events                                                      3.297 M   18.63 16.19  2.7 2.7M 368k 146k
+MuSumJSON:   26718043 events  out of 32376291 (83%),  3517863 dimuons            26.253 M                   23.7M 3.1M 1.2M
+
+MuOnia00:     5447813 events,  runs approximately 146511-146724
+  with JSON:
+MuOnia00:     4869670 events out of 5447813  (89%)                                4.901 M   18.07 15.82  2.5 5.0M 748k 170k
+MuOnia01:     3116594 events                                                      3.339 M   18.00 15.72  2.6 3.3M 498k 116k
+MuOnia02:     2090557 events                                                      2.160 M   18.03 15.77  2.5 2.2M 272k  91k
+MuOnia03:     2813501 events                                                      3.131 M   17.95 15.68  2.7 3.3M 367k 123k
+MuOnia04:     2883552 events                                                      3.086 M   18.15 15.87  2.5 3.0M 331k 128k    
+MuOnia05:     1698385 events                                                      1.802 M   17.98 15.70  2.6 1.8M 264k  65k
+   total:    17472259 events  out of 26685576 (65%)                              18.419 M                   18.6M 2.5M 0.7M 
+
+MuMonitor:   12728741 events,  runs approximately 146437-149442 (unordered)       
+with JSON:   10085889 events   (79%)                                              9.024 M   19.29 16.68  2.4 6.0M 117k  82k
+
+CommissioningAll: 11907244 events
+  with JSON: (almost no extra dimuons)
+Commissioning00JSON:  8800411 events  out of 10921232                             1.223 M   20.19 17.47  1.4 .40M 1.4k 1.1k
+Commissioning02JSON:     9670 events  out of     9670                             0.001 M   20.82 17.97  2.9 .00M 0.0k 0.0k
+Commissioning03JSON:   802533 events  out of   804321                             0.057 M   20.05 17.19  0.9 .02M 0.1k 0.0k
+Commissioning04JSON:   172021 events  out of   172021                             0.012 M   20.27 17.65  0.6 .04M 0.0k 0.0k
+CommissioningAllJSON: 9784635 events  out of 11907244 (82%), 9935/12033 dimuons   1.230 M                    .46M 1.5k 1.1k
+ 
+Grand total:                                                                      
+------------
+
+for debugging:
+JSON affects already first 10000 events of MuOnia file: 146511 and 146710
+                            8000                        146511 
+       lumi sections                              391-397,811-818  202-202
+                                                    in      out      in
+
+
+Samples from CMS primary datasets 2011:
+---------------------------------------                           av.# of vert.
+
+MinimumBias:     121776545 events 2952 files   9.3 TB in total       ~2.5           ~2.4 nb-1
+
+Jet: (Jet)        30726331 events 1223 files   4.7 TB in total       ~5.4
+
+MultiJet:         55664572 events 3737 files   8.9 TB in total
+HT:               88881838 events 3873 files  14.7 TB in total
+
+SingleMu: (Mu)    91006026 events 3976 files  12.2 TB in total       ~6.0           ~2.4 fb-1
+MuHad:            61233399 events 2603 files   9.9 TB in total
+DoubleMu:         39668813 events 1378 files   5.3 TB in total    
+
+SingleElectron:   41709195 events 1542 files   5.8 TB in total
+DoubleElectron:   49693737 events 1697 files   6.7 TB in total
+ElectronHad:      46164534 events 2017 files   7.5 TB in total 
+
+Photon: (Photon)  75207487 events 2866 files  10.4 TB in total
+PhotonHad:        25164938 events 1083 files   3.8 TB in total
+
+MuEG:(Mu+e/gamma) 33131255 events 1305 files   5.1 TB in total
+
+MuOnia:           62229649 events 2298 files   8.4 TB in total
+
+BTag: (BTau)      32376291 events 2979 files   3.2 TB in total
+Tau:              22637875 events  789 files   3.1 TB in total
+TauPlusX:         37788803 events 1423 files   5.2 TB in total
+
+MET:              20786552 events  733 files   2.9 TB in total
+METBTag:           8719588 events  303 files   1.1 TB in total
+
+=> Total O(900.000.000 (945 M)) events, 128.2 TB, including overlaps, without JSON
+  (1/2 year, .5x10^7 seconds -> effective average rate ~180 Hz) 
+
+
+2011 MC samples (except BSM): Summer11LegDR
+----------------------------- -------------
+
+Minimum Bias:     see QCD
+
+single W/Z/DY:
+W:
+/WJetsToLNu_TuneZ2_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  78347691 events 3214 files  12.7 TB in total
+/W1Jet_TuneZ2_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  72165352 events 3492 files  12.2 TB in total
+/W2Jets_TuneZ2_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  25069719 events 1365 files   4.5 TB in total
+/W3Jets_TuneZ2_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   6291779 events  396 files   1.2 TB in total
+/W4Jets_TuneZ2_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  13240225 events  849 files   2.8 TB in total
+Z/DY: *** copied ***
+/DYJetsToLL_M-10To50_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  39909640 events 1771 files   6.1 TB in total  9507 pb * 1.        -> 4.20 fb-1 -> 0.476
+/DYJetsToLL_M-50_7TeV-madgraph-pythia6-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  34926233 events 7501 files   6.0 TB in total  2475 pb * 1.(*0.401) ->14.1 fb-1 -> 0.142
+Z/DY+jets:
+/DYJetsToLL_TuneZ2_M-50_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  36408225 events 15410 files  6.2 TB in total
+/DY1JetToLL_M-10To50_TuneZ2_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4984292 events 2338 files 828.0 GB in total
+/DY2Jets_M-10To50_TuneZ2_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  18018599 events 7661 files   3.1 TB in total
+/DY3Jets_M-10To50_TuneZ2_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4901826 events 2427 files 897.9 GB in total
+/DY4Jets_M-10To50_TuneZ2_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1193220 events  649 files 235.3 GB in total
+
+Jets and heavy flavour:
+inclusive:
+/QCD_Pt-0to5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1000025 events   55 files 137.8 GB in total     48399999000 pb * 0.938 -> 2.2027 E-5 pb-1 
+                                                                   -> .0022 nb-1        -> 90.8 E6 ??  
+/QCD_Pt-5to15_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1495884 events   83 files 223.3 GB in total     36800000000 pb * 1.0 -> 4.06 E-5 pb-1
+                                                                                        -> 49.2 E6 ??
+/QCD_Pt-15to30_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   9978850 events 5519 files 1.7 TB in total
+/QCD_Pt-30to50_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   5837856 events  277 files   1.0 TB in total
+/QCD_Pt-50to80_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   5766430 events  299 files   1.1 TB in total
+/QCD_Pt-80to120_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   5867864 events  317 files   1.2 TB in total
+/QCD_Pt-120to170_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   5963264 events  334 files   1.2 TB in total
+/QCD_Pt-170to300_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   5975592 events  387 files   1.3 TB in total
+/QCD_Pt-300to470_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   5975016 events  382 files   1.4 TB in total
+/QCD_Pt-470to600_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   3967154 events  274 files 957.1 GB in total
+/QCD_Pt-600to800_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   3988701 events  271 files 976.8 GB in total
+/QCD_Pt-800to1000_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   3945269 events  295 files 974.3 GB in total
+/QCD_Pt-1000to1400_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1956893 events  131 files 484.1 GB in total
+/QCD_Pt-1400to1800_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1991792 events  182 files 491.4 GB in total
+/QCD_Pt-1800_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    996500 events   75 files 243.4 GB in total
+/GJets_TuneZ2_40_HT_100_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  13344737 events  596 files   2.3 TB in total
+/GJets_TuneZ2_100_HT_200_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v3/AODSIM
+                  1514353  events  490 files 288.3 GB in total
+/GJets_TuneZ2_200_HT_inf_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  9275605  events  599 files   1.9 TB in total
+mu-enriched:
+/QCD_Pt-15to20_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1901694 events  118 files 337.0 GB in total   580700000 pb * 0.0035  -> .936 pb-1 -> 2138.
+/QCD_Pt-20_MuEnrichedPt-10_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   8051565 events  446 files   1.5 TB in total   296600000 pb * 0.00118 -> 23.0 pb-1 ->  87.
+/QCD_Pt-20_MuEnrichedPt-15_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  25100532 events 1433 files   4.8 TB in total   296600000 pb * 0.0002855-> 297 pb-1 -> 6.73
+* both -> 320 pb-1 for pt1>15
+/QCD_Pt-20to30_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  12133278 events  641 files   2.2 TB in total   235400000 pb * 0.0045  -> 11.5 pb-1 -> 174. 
+/QCD_Pt-30to50_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  11610144 events  607 files   2.2 TB in total    53470000 pb * 0.01    -> 21.7 pb-1 -> 92.2
+/QCD_Pt-50to80_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   9887094 events  575 files   2.0 TB in total     6317000 pb * 0.0245  -> 63.9 pb-1 -> 31.3
+/QCD_Pt-80to120_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  10497146 events  614 files   2.2 TB in total      785000 pb * 0.0363   -> 368 pb-1 -> 5.43
+/QCD_Pt-120to170_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   7913447 events  490 files   1.8 TB in total      116000 pb * 0.0545  ->1.251 fb-1 -> 1.60
+/QCD_Pt-170to300_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   8116425 events  533 files   1.9 TB in total       24690 pb * 0.0625  ->5.259 fb-1 -> 0.380
+/QCD_Pt-300to470_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   7870022 events  574 files   2.0 TB in total        1153 pb * 0.0923  -> 74.0 fb-1 -> .0270
+/QCD_Pt-470to600_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   3812536 events  299 files   1.0 TB in total       71.81 pb * 0.086    -> 617 fb-1 -> .00324
+/QCD_Pt-600to800_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4149919 events  337 files   1.1 TB in total       15.15 pb * 0.094   -> 2914 fb-1 -> .00069
+/QCD_Pt-800to1000_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4036877 events  329 files   1.1 TB in total        1.863 pb* 0.1033 -> 20976 fb-1 -> .00010 
+/QCD_Pt-1000_MuEnrichedPt5_TuneZ2_7TeV_pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4133903 events  340 files   1.1 TB in total       0.3392 pb* 0.094 -> 129651 fb-1 -> .000015
+e-enriched:
+/QCD_Pt-20to30_BCtoE_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  1927954  events  103 files 335.1 GB in total
+/QCD_Pt-20to30_EMEnriched_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                 33300093  events 1730 files   5.7 TB in total
+/QCD_Pt-30to80_BCtoE_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  1946514  events  116 files 356.2 GB in total
+/QCD_Pt-30to80_EMEnriched_TuneZ2_7TeV-pythia/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                 71775353  events 4087 files  12.9 TB in total
+/QCD_Pt-80to170_BCtoE_TuneZ2_7TeV-pythia/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  1002431  events   65 files 203.4 GB in total
+/QCD_Pt-80to170_EMEnriched_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  7650341  events  465 files   1.5 TB in total
+/QCD_Pt-170to250_EMEnriched_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  2968849  events  202 files 645.7 GB in total
+/QCD_Pt-250to350_EMEnriched_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  2952965  events  215 files 668.3 GB in total
+/QCD_Pt-350_EMEnriched_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  2969703  events  235 files 695.0 GB in total
+/GJet_Pt-20_doubleEMEnriched_TuneZ2_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  6228977  events  311 files   1.1 TB in total
+B-hadron-enriched:
+/LambdaBToLambdaPsi_JpsiPiPiPPi_EtaPtFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6...
+                    68864  events    5 files  12.3 GB in total
+/Bd2JpsiKstar_EtaPtFilter_TuneZ2star_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                 11524203  events  764 files   2.1 TB in total
+/Bd2KstarMuMu_EtaPtFilter_TuneZ2star_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                 20065848  events 1069 files   3.6 TB in total
+/Bd2Psi2SKstar_EtaPtFilter_TuneZ2star_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                   972220  events   65 files 175.6 GB in total
+/BuToJPsiKV2_2MuPtEtaFilterKPtEtaFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  9526165  events  520 files   1.7 TB in total
+/BuToKMuMu_BFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                 19352814  events  942 files   3.5 TB in total
+/BuToKstarJPsiV2_EtaPtFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  1884277  events  122 files 338.1 GB in total
+/BuToKstarMuMuV2_EtaPtFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                 73555115  events 3768 files  13.2 TB in total
+/BuToKstarPsi2SV2_EtaPtFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  1732363  events   96 files 310.4 GB in total
+/BuToPsiK_KFilter_TuneZ2star_SVS_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  9931454  events  587 files   1.8 TB in total
+/LambdaBToJPsiLambda_lambdaFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  3558511  events  249 files 637.6 GB in total
+/LambdaBToLambdaJpsi_EtaPtFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    92080  events    8 files  16.4 GB in total
+/LambdaBToLambdaMuMu_EtaPtFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/A
+                   117200  events    9 files  20.8 GB in total
+/LambdaBToLambdaPsi_EtaPtFilter_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    88608  events    7 files  15.7 GB in total
+ttbar:
+ttbar, right mass:
+/TTJets_MSDecays_central_TuneZ2_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  18705794 events 1194 files   4.4 TB in total  96 pb *1. (*.307)  -> 195 fb-1     -> .0103
+/TTJets_MSDecays_mass173_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4560775 events  353 files   1.1 TB in total
+/TTJets_MSDecays_scaleup_mt172_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4371027 events  274 files   1.0 TB in total
+/TTJets_MSDecays_matchingdown_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4056498 events  333 files 948.2 GB in total
+/TT_weights_CT10_AUET2_7TeV-powheg-herwig/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                   4480826 events  465 files   1.4 TB in total
+/TTJets_TuneZ2_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  54990752 events 7382 files  12.8 TB in total
+/TTJets_MSDecays_scaledown_mt172_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4846452 events  391 files   1.1 TB in total
+/TTJets_MSDecays_scaleup_TuneZ2star_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                  10082949 events 2488 files   2.3 TB in total
+/TTJets_MSDecays_dileptonic_central_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1875193 events  127 files 392.0 GB in total  10.4 pb * 1. (* 0.298) -> 180 fb-1 -> .0111
+/TTJets_MSDecays_dileptonic_matchingdown_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_L...
+                   1222632 events   96 files 268.6 GB in total
+/TTJets_MSDecays_dileptonic_matchingdown_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_L...
+                    601807 events   38 files 131.8 GB in total
+/TTJets_MSDecays_dileptonic_matchingup_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-...
+                   1938773 events  161 files 423.3 GB in total
+/TTJets_MSDecays_dileptonic_scaledown_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v...
+                   1897839 events  114 files 416.0 GB in total
+/TTJets_MSDecays_dileptonic_scaleup_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1819553 events  160 files 391.2 GB in total
+/TTJets_MSDecays_scaledown_TuneZ2star_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v...
+                   9416216 events 2607 files   2.3 TB in total
+/TTTo2L2Nu2B_7TeV-powheg-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   9771205 events  676 files   2.1 TB in total
+/TTJets_MSDecays_matchingup_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  16727272 events 1207 files   3.9 TB in total
+/TTJets_MSDecays_matchingdown_mt172_5_7TeV-madgraph/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1847351 events  142 files 431.0 GB in total
+/TT_weights_CT10_TuneZ2_7TeV-powheg-pythia-tauola/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                   4833137 events  330 files   1.1 TB in total
+
+
+ttbar, wrong mass:
+/TTJets_MSDecays_mass175_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   9175131 events  771 files   2.1 TB in total
+/TTJets_MSDecays_mass169_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   9151274 events  694 files   2.1 TB in total
+/TTJets_MSDecays_mass171_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   4664796 events  380 files   1.1 TB in total
+/TTJets_MSDecays_dileptonic_mt166_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                   1959448 events  141 files 407.6 GB in total
+/TTJets_MSDecays_dileptonic_mt178_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v2/AODSIM
+                   1908267 events  163 files 419.4 GB in total
+
+single top:
+/Tbar_TuneZ2_s-channel_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    139258 events  126 files  28.5 GB in total
+/T_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    744859 events  477 files 162.4 GB in total
+/T_TuneZ2_s-channel_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    229786 events  158 files  47.3 GB in total
+/Tbar_TuneZ2_t-channel_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1943163 events  118 files 387.4 GB in total
+/Tbar_TuneZ2_tW-channel-DS_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    790616 events   52 files 170.4 GB in total
+/Tbar_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    801626 events   56 files 174.1 GB in total
+/T_TuneZ2_tW-channel-DS_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    787985 events   60 files 169.6 GB in total
+/T_TuneZ2_t-channel_7TeV-powheg-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   3249552 events  215 files 652.1 GB in total
+
+MuOnia: *** copied ***
+/JPsiToMuMu_2MuPEtaFilter_7TeV-pythia6-evtgen-v2/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                  17891173 events 1077 files   3.1 TB in total   (high pT, |eta|<~1.5)
+                                                                151490000 pb * .00362 -> 32.6 pb-1 -> 61.3 ???
+/Upsilon1SToMuMu_2MuEtaFilter_tuneD6T_7TeV-pythia6-evtgen/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   2156132 events   94 files 359.4 GB in total  99900 pb * 0.143     -> 151 pb-1 -> 13.2 ???
+
+Multiboson: (first 3 pages from 39)
+ZZ:
+/Vector1MToZZTo4L_M-125p6_7TeV-JHUGenV3-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    299373 events   21 files  55.4 GB in total
+/ZZTo4mu_7TeV_mll8_mZZ95-160-powheg15-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1210565 events   77 files 225.0 GB in total
+/ZZTo4mu_mll4_7TeV-powheg-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1447136 events   92 files 263.1 GB in total
+/ZZTo4tau_7TeV_mll8_mZZ95-160-powheg15-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    981810 events   67 files 166.8 GB in total
+/ZZTo4tau_mll4_7TeV-powheg-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   1499084 events   85 files 249.8 GB in total
+/ZZ_TuneZ2_7TeV_pythia6_tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                   3899263 events  228 files 735.4 GB in total
+
+
+Higgs: (first 3 pages from 39)
+VBF:
+/VBFToHToZZTo2L2Nu_M-1000_7TeV-powheg15-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    244495 events  183 files  45.6 GB in total
+/VBFToHToZZTo2L2Nu_M-250_7TeV-powheg15-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    298454 events   20 files  56.3 GB in total
+Boson radiation:
+right mass:
+/ZH_HToZZTo4L_M-126_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     51221 events    4 files  10.4 GB in total
+wrong mass:
+/ZH_HToZZTo4L_M-130_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     50495 events    5 files  10.3 GB in total
+/ZH_HToZZTo4L_M-140_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     50878 events    3 files  10.4 GB in total
+/ZH_HToZZTo4L_M-150_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     49802 events    4 files  10.3 GB in total
+/ZH_HToZZTo4L_M-160_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     50657 events    5 files  10.5 GB in total
+/ZH_HToZZTo4L_M-180_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     50167 events    5 files  10.5 GB in total
+/SMHiggsToZZTo4L_M-180_7TeV-powheg15-JHUgenV3-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    298478 events   23 files  59.5 GB in total
+/SMHiggsToZZTo4L_M-200_7TeV-powheg15-JHUgenV3-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                    291178 events   24 files  58.3 GB in total 
+ttH:
+/TTbarH_HToZZTo4L_M-126_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     30614 events    5 files   7.7 GB in total
+/TTbarH_HToZZTo4L_M-150_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     32367 events    4 files   8.2 GB in total
+ZH:
+/ZH_HToZZTo4L_M-125_7TeV-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM
+                     51226 events    5 files  10.4 GB in total
+
+*******************************************************************
+
+                      with JSON:      without JSON:                     
+MinimumBias00000:          events out of  42506244 (tmp: only the last 36 M analyzed) 
+MinimumBias00001:                 out of   7862647  
+MinimumBias010000:                out of    717447 
+MinimumBias20000:                 out of  42261112 (tmp: only the last 32 M analyzed) 
+MinimumBias20001:                 out of  28392096 
+MinimumBias210000:    5612 events out of     36999
+--------------------------------------------------
+total:                            out of 121776545 
+*** triggers checked *** (without JSON)
+useful up to about 30 GeV Pt (above that: Jet sample)
+
+                      with JSON:      without JSON: 
+Jet10000:                  events out of    128880 
+Jet20000:                         out of  25611018 (~24h real time, "Matias": 50000/2h)
+Jet20001:                         out of   4986433
+--------------------------------------------------
+total:                            out of  30726331 
+*** triggers checked *** (without JSON)
+useful from about 30 GeV Pt (below that: MinimumBias sample)
+
+with JSON:
+SingleMu10000:   26658480 events
+SingleMu10001:    7610922 events out of  8557398 
+SingleMu20000:   24381166 events
+SingleMu20001:   20106695 events
+------------------------------------------------
+SingleMuAll:     78757263 events out of 91006026 (87%),  4403353 global dimuons
+*** triggers checked *** (with JSON)
+
+~45% pt1>30, ~4% pt1>24, ~4% pt1>20, ~32% pt1>17, ~6% pt1>15, ~5% pt1>12,  ~2% pt1>8, ~0.08% pt1>5, ~0.12% pt1>0 
+wgt     1.         .55        .51           .47        .15          .09         .04        .02          0.12
+remaining 1.2% caused by dimuons, thus renormalize
+~46% pt1>30, ~4% pt1>24, ~4% pt1>20, ~33% pt1>17, ~6% pt1>15, ~5% pt1>12,  ~1.5% pt1>8, ~1.5% pt1>5   ~0% pt1>0
+wgt     1.         .54        .50           .46        .14          .08         .03        .015         0.
+pt1>5 is implicit in all single Mu triggers
+could use inclusive pt<20 with mupt>15 and/or pt>10 samples combined with 15<pt<20 ptmu>5 (but cut ptmu>10 or 15)
+-> ~1.5 nb-1 * multiplicity next-to-minimum bias
+
+with JSON:
+DoubleMu10000:   26320429 events
+DoubleMu10001:    8950158 events
+DoubleMu20000:      17191 events
+------------------------------------------------
+DoubleMuAll:     35287778 events out of 39668813 (89%), 1896399X global dimuons
+*** triggers checked *** (with JSON)
+
+~20% pt1/2>13/8, ~20% pt1/2>6/6, ~15% pt1/2>5/5,  ~25% pt1/2>4/4, ~20% pt1/2>3/3      below
+wgt     1.                .8              .6               .45             .2          0.
+to satisfy Mu enriched MC:                  make it          5/4             5/3    ?
+or better: require pt1>5, |eta1|<2.4 in both data and MC
+          (to include pt1<5, all quantities have to be derived from data)
+
+DoubleMu data luminosity is assumed to be 2 fb-1. It should rather be 2.4 (2.5?) fb-1. 
+
+Inclusively: pt(mu1)>10 (single) or (pt(mu1)>5 and pt(mu2)>3) (double)?
+-> double only, 5/3     inclusive only, 10/0      inclusive as extension to double, 5/3 or 5/0
+   13/8 -> wgt 1.       30/0 -> wgt 1.            30/0-8 -> wgt 1.    (instead of 1.25-5.)
+    6/6 -> wgt 1.25     24/0 -> wgt 1.85          24/0-5 -> wgt 1.85  (instead of 2.22-5.)
+    5/5 -> wgt 1.67     20/0 -> wgt 2.            20/0-5 -> wgt 2.    (instead of 2.22-5.)
+    5/4 -> wgt 2.22     17/0 -> wgt 2.17          17/0-5 -> wgt 2.17  (instead of 2.22-5.) 
+    5/3 -> wgt 5.       15/0 -> wgt 7.1           15/0-3 -> wgt 7.1
+    cut 5/4 -> last     12/0 -> wgt 12.5          12/0-3 -> wgt 12.5
+         disappears     10/0 -> wgt 33.            
+                        cut 15/0 -> last 2 disappear
+                        cut 17/0 -> last 3 disappear
+                         8/0 -> wgt 33.            8/0-3 -> wgt 33.
+                         5/0 -> wgt 66.            5/0-3 -> wgt 66.
+
+                      with JSON:      without JSON: 
+MuHad00000:       20095705 events out of   
+MuHad20000:       21860943 events out of
+MuHad20001:       13362163 events out of 
+--------------------------------------------------
+total:            55318811 events out of  61233399 (90%)
+*** triggers checked *** (with JSON)
+main trigger categories:  Mu+HT          (~18%)
+                          Mu+Dijet+Btag  (~18%)
+                          Mu+e+HT        (~13%)
+                          Mu+Jet+Btag    (~12%)
+                          ...
+~140M NMB events possibly useful despite jet bias?
+fraction of MinBias ~100/54M -> prescale 5x10^5 -> 2.5 fb-1 /5E5 = ~5 nb-1
+This would mean 50 mb * 5 nb-1 = 250M Min Bias events, ... but only 120M seen.
+Where is the missing factor 2? 
+
+
+Upsilon2Mu00000:  2132415 events                         1003246 global dimuons
+Upsilon2Mu50000:    23717 events                           11069 global dimuons
+                  -------                                -------
+Upsilon2MuAll:    2156132 events out of 2156132 (100%),  1014315 global dimuons
+
+Jpsi2Mu00000:     5010912 events                         2820048 global dimuons
+probably pt1>5, |eta1|<1.2?
+
+DY10-50:         39909640 events                         3319824 global dimuons * .476   ->  1580236 events
+* can single photon MC be used for low mass DY?
+* can high mass DY MC be used for low mass DY? (rescale according to m^2+pt^2)
+* rescale according to some generator level MC?
+
+DY50_00000:      30731014 events out of 34926233 (88.0%) 5222466 global dimuons * .142/.880-> 842716 events
+DY50_00001:        386958 events                           65145 
+DY50_00002:        249889 events                           42371   
+DY50_010000:      2357469 events                          400145
+DY50_010001:       303712 events                           51365 
+DY50_010002:       233987 events                           39551 
+DY50_010003:       404619 events                           68857
+DY50_010004:       253671 events                           43232
+DY50_010005:         4914 events                             850
+                 --------                                ------- 
+                 34926233 events                         5933982 global dimuons * .142   ->   842625 events
+* usually the first file with weights 1/.880 will be sufficient
+
+ttbarMu00000:     1508184 events out of  1875193 (80.4%)  380368 global dimuons * .0111/.804->  5251 events 
+ttbarMu70000:      367009 events                           92465 global dimuons  
+                  -------                                 ------
+ttbarMuAll:       1875193                                 472833                * .0111  ->     5248 events
+* usually the first file with weights 1/.804 will be sufficient 
+
+QCD0-5:           1000025 events                             100 global dimuons * 90.8E6 -> 9.1E9 ?? events
+QCD5-15:          1495884 events                             199 global dimuons * 49.2E6 -> 9.8E9 ?? events
+*** statistics too low. get from next-to-minimum bias? ***
+* e.g. ask for mu1>15 and remove vertex, look for mu from other vertex, with pthard(vertex)<15
+* expect O(10000-100000) events with global dimuons
+
+QCD15-20Mu_00000: 1893090 events                           42164 global dimuons * 2138   -> 90146632 events
+QCD15-20Mu_10000:    8604 events                             194 global dimuons * 2138   ->   414772 events 
+* cut pt>5, (|eta|<2.4? probably not, just acceptance)
+* if statistics is too low change mu1>15 to mu1>20 and pthard(vertex)<20 above 
+* and get from next-to-minimum bias (in addition?)
+* alternatively, use pt>10 or pt>15 samples:
+QCD-20Mupt10:     8051565 events                          405731 global dimuons *  87.   -> 35298597 events
+* for single mu, weight for QCD15-20Mu is then 2138*.03  = 64. for 8<pt1<10
+*                                         and  2138*.015 = 32. for 5<pt1<8
+* for double mu, weight for QCD15-20Mu is then 2138*.8 = 1710. for 6<pt1<10, 6<pt2<10
+*                                              2138*.6 = 1282. for 5<pt1<10, 5<pt2<6
+*                                              2138*.45 = 962. for 4<pt1<10, 4<pt2<5
+*                                              2138*.2  = 428. for 3<pt1<10, 3<pt2<4
+* in both cases, should use next-to-minimum-bias for pthard<15 and pt1<10 (weights of order 10^4-10^6) 
+QCD-20Mupt15:    25100532 events                         1613864 global dimuons *   6.73 -> 10861305 events
+* covers only 30% of Mupt10 sample -> do not use unless pt1 cut is raised to 15 GeV.
+
+QCD20-30Mu:      12133278 events                          330732 global dimuons * 174.   -> 57547368 events
+cut pt>5, (|eta|<2.4? probably not, just acceptance)
+statistics should be OK (better than minbias) from here onwards
+QCD30-50Mu:      11610144 events                          394532 global dimuons * 92.2   -> 36375850 events
+QCD50-80Mu:       9887094 events                          408927 global dimuons * 31.3   -> 12799415 events
+                 ---------------                         -------
+  QCD15-80Mu:    35532210 events                         1176549 global dimuons
+
+QCD80-120Mu:     10497146 events                          506668 global dimuons * 5.43    -> 2751207 events        
+QCD120-170Mu:     7913447 events                          429889 global dimuons * 1.60    ->  687822 events
+QCD170-300Mu:     8116425 events                          496379 global dimuons * .380    ->  188624 events
+QCD300-470Mu:     7870022 events                          569469 global dimuons * .0270   ->   15375 events
+QCD470-600Mu:     3812536 events                          318230 global dimuons * .00324  ->    1031 events
+QCD600-800Mu:     4149919 events                          384299 global dimuons * .00069  ->     265 events
+QCD800-1000Mu:    4036877 events                          420902 global dimuons * .00010  ->      42 events
+QCD1000Mu:        4133903 events                          482649 global dimuons * .000015 ->       7 events
+                 ---------------
+  QCD80-1000Mu:  50530275 events
+
+* turn phi->mumu into omega->mumu?
+* turn J/psi->mumu into psi^prime->mumu?                 )
+* turn Upsilon->mumu into Upsilon^prime(prime)->mumu?    ) will miss some part of costheta*
+
+* use "other B" from B hadron enriched samples for B simulation

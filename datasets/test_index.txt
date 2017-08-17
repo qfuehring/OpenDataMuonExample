@@ -1,0 +1,3 @@
+root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoubleMuParked/AOD/22Jan2013-v1/20000/F65529BE-8968-E211-AC07-002618FDA194.root
+root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoubleMuParked/AOD/22Jan2013-v1/20000/F65C249C-3C67-E211-AC18-20CF3027A637.root
+root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoubleMuParked/AOD/22Jan2013-v1/20000/F67F44DC-4567-E211-96B2-20CF305B050B.root
