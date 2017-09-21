@@ -1,4 +1,4 @@
-# 2011-2012-di-muon-example
+# 2011/12-di-muon-example
 Validation code for 2011/12 SingleMu and DoubleMu datasets, based on dimuon mass spectrum.
 
 You need to work in a Virtual Machine properly contextualized for CMS.
@@ -27,7 +27,7 @@ cd DemoAnalyzer
 ```
 
 
-## Cloning the 2011-2012-di-muon-example repository from Github
+## Cloning the 2011/12-di-muon-example repository from Github
 For cloning type:
 ```
 git clone https://github.com/qfuehring/OpenDataMuonExample
